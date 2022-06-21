@@ -1,0 +1,18 @@
+- redux: a própria biblioteca
+- react-redux: uma redução das duas bibliotecas 
+
+
+Comandos 
+
+npm install redux react-redux
+
+Como o redux funciona? 
+
+Store (Um local específico que ficam todos os dados do redux)
+Reducers(Cada reducer é responsável por armazenar infos sobre determinado assunto, ex:info sobre usuarios)
+Action (
+
+    Reducers de Usuarios
+    
+    Action -> TROCAR NOME -> Nathan (não troco infos dentro do reducers, o action faz isso)
+)

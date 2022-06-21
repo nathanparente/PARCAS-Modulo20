@@ -1,0 +1,5 @@
+O Estado Global é um conceito de poder usar por exemplo o useState de forma que todas as telas, arquivos 
+sejam afetados por ela.
+
+Então a grosso modo seria um State global, pra compartilhar informações entre as telas e tem acesso em toda a aplicação
+ 
