@@ -13,7 +13,7 @@ function Home(props) {
     }
 
     const handleSetarNome = () => {
-        props.setName('Nathan')
+        props.setName('Usuario')
     }
 
     const handleIncrement = () => {
@@ -26,7 +26,7 @@ function Home(props) {
             NOME: {props.name}<br/>
             CONTAGEM: {props.contador}<br/><br/>
 
-            <button onClick={handleSetarNome}>Setar nome para: </button>
+            <button onClick={handleSetarNome}>Setar nome para: Usuario </button>
             <button onClick={handleIncrement}>+1</button>
 
             <br/><br/>

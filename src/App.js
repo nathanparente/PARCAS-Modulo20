@@ -20,7 +20,7 @@ const PrivateRoute = ({children}) => {
 */
 
 
-const isLogged = true;
+const isLogged = false;
 function App () {
 
   return (
