@@ -1,10 +1,15 @@
 import React from "react";
 import {useNavigate} from 'react-router-dom';
-import {connect} from 'react-redux';
+//import {connect} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 
-function Home(props) {
+function Home() {
 
     let navigate = useNavigate();
+
+    const dispatch = useDispatch();
+    const name = useSelector(state => state.usuario.name)
+    const contador = useSelector(state => state.usuario.contador)
 
     const handleButton = () => {
         setTimeout(() => {
@@ -13,18 +18,23 @@ function Home(props) {
     }
 
     const handleSetarNome = () => {
-        props.setName('Usuario')
+        dispatch({
+            type:'SET_NAME',
+            payload:{name:'Usuario'}
+        })
     }
 
     const handleIncrement = () => {
-        props.increment()
+        dispatch({
+            type:'INCREMENT_CONTADOR'
+        })
     }
     return(
         <div>
             <h4>Página HOME</h4>
 
-            NOME: {props.name}<br/>
-            CONTAGEM: {props.contador}<br/><br/>
+            NOME: {name}<br/>
+            CONTAGEM: {contador}<br/><br/>
 
             <button onClick={handleSetarNome}>Setar nome para: Usuario </button>
             <button onClick={handleIncrement}>+1</button>
@@ -35,24 +45,4 @@ function Home(props) {
     )
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setName: (newName) => dispatch ({
-            type: 'SET_NAME',
-            payload: {name:newName}
-        }),
-        increment:() => dispatch({
-            type: 'INCREMENT_CONTADOR'
-        })
-    }
-}
-
-
-const mapStateToProps = (state) => {
-    return {
-        name:state.usuario.name,
-        contador:state.usuario.contador
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default Home;
